@@ -1,0 +1,15 @@
+<template>
+    <div class="lightningcard">
+    <lightning-card>
+    <template if:true={opinions.data}>
+    <template for:each={opinions.data} for:item="opinion">  
+        <p key={opinion.Id} class="description"><b>{opinion.Opinion_about_product__c}</b></br></p>
+            <template if:true={boolVisible}>
+            <span class={showMoreClass} key={opinion.Id}>{opinion.AnnouncementDescription__c}</span>
+    </template>
+    <lightning-button  key={Announcement__c.Id} variant="brand" label={clickedButtonLabel} title="...more" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </template> 
+    </template>
+    </lightning-card>
+    </div>
+    </template>
